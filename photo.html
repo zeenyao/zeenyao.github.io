@@ -4,13 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>姚泽恩</title>
+        <title>植物相册</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/photo.css">
+        <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <nav class="nav">
-
             <div class="logo">
                 <img src="img/姚泽恩.png" id="name-img">
             </div>
@@ -24,5 +25,60 @@
                     <li><a href="photo.html">相册</a></li>
                 </ul>
             </div>
-        
         </nav>
+        <nav class="photo">
+            <div class="photo-links">
+                <ul>
+                    <li><a href="#" id="show-plants">植物</a></li>
+                    <li><a href="#" id="show-travel">旅行</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section class="photo-gallery">
+            <div class="photo-item">
+                <img src="img/photo/1742649546588.jpg" alt="植物照片">
+                <div class="photo-info">
+                    <span class="timestamp">2025-03-21</span>
+                    <span class="category" style="display: none;">植物</span>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="img/photo/1742649571004.jpg" alt="旅行照片">
+                <div class="photo-info">
+                    <span class="timestamp">2025-03-21</span>
+                    <span class="category" style="display: none;">旅行</span>
+                </div>
+            </div>
+        </section>
+        <script>
+            // 获取所有图片项
+            const photoItems = document.querySelectorAll('.photo-item');
+            
+            // 获取植物和旅行分类按钮
+            const showPlantsButton = document.getElementById('show-plants');
+            const showTravelButton = document.getElementById('show-travel');
+    
+            // 设置分类显示功能
+            showPlantsButton.addEventListener('click', function() {
+                filterPhotos('植物');
+            });
+    
+            showTravelButton.addEventListener('click', function() {
+                filterPhotos('旅行');
+            });
+    
+            // 根据分类筛选照片
+            function filterPhotos(category) {
+                photoItems.forEach(function(item) {
+                    const categoryTag = item.querySelector('.category').textContent;
+                    if (categoryTag === category) {
+                        item.style.display = 'block';  // 显示相应分类的图片
+                    } else {
+                        item.style.display = 'none';   // 隐藏其他分类的图片
+                    }
+                });
+            }
+        </script>
+    
+    </body>
