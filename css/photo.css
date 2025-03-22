@@ -6,7 +6,7 @@
 
 .photo {
     margin: 70px 0px 0px 0px;
-    height: 150px;
+    height: 10px;
     width: 100%;  /* 或者指定一个具体宽度 */
     display: flex;
 }
