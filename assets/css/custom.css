@@ -1,0 +1,20 @@
+div.highlighter-rouge {
+  position: relative; /* 伪元素定位基准 */
+}
+
+div.highlighter-rouge::before {
+  content: "Bash" !important;          /* 显示文本，首字母大写 */
+  position: absolute !important;       /* 绝对定位 */
+  top: 0.25rem !important;             /* 距顶部 */
+  left: 0.25rem !important;            /* 距左侧 */
+  font-family: "Times New Roman", serif !important;  /* 修改字体 */
+  font-size: 0.5em !important;        /* 字号 */
+  font-style: normal !important;       /* 正常字体样式 */
+  text-transform: none !important;     /* 不强制大小写转换 */
+  color: #000000 !important;            /* 字体颜色 */
+  background-color: transparent !important; /* 全透明背景 */
+  padding: 2px 6px !important;         /* 内边距 */
+  pointer-events: none !important;     /* 不阻挡鼠标事件 */
+  z-index: 10 !important;               /* 层级 */
+  border-bottom: 1px solid #000 !important; /* 添加底部横线 */
+}

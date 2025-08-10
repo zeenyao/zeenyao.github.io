@@ -23,3 +23,25 @@
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
   Site last updated {{ "now" | date: '%Y-%m-%d' }}
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('div.highlight').forEach(function (block) {
+    const button = document.createElement('button');
+    button.className = 'copy-btn';
+    button.textContent = '复制';
+    block.classList.add('code-wrapper');
+    block.appendChild(button);
+
+    const clipboard = new ClipboardJS(button, {
+      target: function() {
+        return block.querySelector('pre');
+      }
+    });
+
+    clipboard.on('success', function(e) {
+      button.textContent = '已复制';
+      setTimeout(() => button.textContent = '复制', 1500);
+    });
+  });
+});
+</script>
