@@ -22,13 +22,7 @@ redirect_from:
   
 技能
 ======
-* MS Office
-  * Word
-  * Excel
-  * PowerPoint
-* Python
-* Linux
-* R
+
 
 <!-- Publications
 ======
